@@ -3,8 +3,7 @@ A very usefull matlab class to organize, log, and save any variables from your e
 ```
 rec = Logger();
 for i = 1:50
-    a = rand();
-    rec.logit(a)
+    a = rand(); rec.logit(a)
 end
 plot(rec.a)
 rec.save('here.mat')
