@@ -1,7 +1,6 @@
 % A class to log variable in iterative experiments. See https://github.com/jgrizou/logger for more details
 %
 % I took inspiration from logger-1.0 by Pavan Mallapragada, MIT, Otcober, 2011
-% scalar and cell are stacked variable in one column
 %
 % Copyright (C) 2015 Jonathan Grizou
 %
