@@ -69,12 +69,16 @@ analysisLog
 analysisLog.a
 figure(); plot(analysisLog.a)
 
-%% Advance usage
+%% Advanced usages
 % You can also copy a logger
 recCopy1 = copy(rec1);
 % It makes a deep copy, meaning changind recCopy will not affect rec1.
 recCopy1.log_field('f', 12);
-% Check the results
+% You can remove a field
+recCopy1.rm_field({'a', 'b'})
+% You can replace a field, which simply do a rm_field followed by a log_field 
+recCopy1.replace_field('variableC', 'toto')
+% Check the results and difference between rec1 and recCopy1
 
 % You can also log all variabel already registered directly from the workspace
 % Look for log_from_workspace(self, variableNames, workspaceName) and log_all_registered(sefl, workspaceName)
@@ -86,15 +90,9 @@ for i = 1:10
   a = exp(-i)*10 + rand();
   b = rand(10,1);
   c = rand(1,10);
-  rec.log_all_registered()
+  rec3.log_all_registered()
 end
 rec3
-
-% You can remove a field
-recCopy2 = copy(rec1);
-recCopy2.rm_field({'a', 'b'})
-
-% See also replace_field, which simply do a rm_field followed by a log_field 
 
 %% 
 % Now feel free to use the logger class in creative ways.
